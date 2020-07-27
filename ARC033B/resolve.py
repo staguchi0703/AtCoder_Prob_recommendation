@@ -2,20 +2,24 @@ def resolve():
     '''
     code here
     '''
+    from bisect import bisect_left as bis
     NA, NB = [int(item) for item in input().split()]
 
     As = [int(item) for item in input().split()]
     Bs = [int(item) for item in input().split()]
-
+    Bs.sort()
     
-    A_and_B = []
-    A_or_B = []
+    cnt_A_and_B = 0
     for item in As:
-        #二分探索でBsと同じの見つける
-        
- 
+        b_index = bis(Bs, item)
+        if b_index < NB: 
+            if item == Bs[b_index]:
+                cnt_A_and_B +=1
 
-    print(sum(A_and_B)/sum(A_or_B))
+    cnt_A_or_B = len(set(As+Bs))
+        
+
+    print(cnt_A_and_B/cnt_A_or_B)
 
 
 
