@@ -4,13 +4,14 @@ def resolve():
     '''
     N = int(input())
     As = [int(item) for item in input().split()]
+    As.sort()
 
-    # 大きい順にリストにする
-    # 入れ物リストを作って、大きい順に最適な位置に入れる
-    # 最適な位置は最初はindex=0,
-    #　次は N//2 
-    #　次は連続した空席の数nに対して n//2の位置
-    # 全部埋め尽くすまで居れていく
+    res = 0
+
+    for i in range(1, N):
+        res += As[N-1 - i//2]        
+
+    print(res)
 
 if __name__ == "__main__":
     resolve()
