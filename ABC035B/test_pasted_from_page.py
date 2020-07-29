@@ -38,9 +38,9 @@ class TestClass(unittest.TestCase):
         self.assertIO(input, output)
 
     def test_入力例_4(self):
-        input = """UULL?
+        input = """UULL???????
 2"""
-        output = """3"""
+        output = """1"""
         self.assertIO(input, output)
 
 
