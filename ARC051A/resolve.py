@@ -13,7 +13,12 @@ def resolve():
         print('YES')
     
     # Blue
-    if (x2 - x1)**2 + (y2 - y1)**2 <= r**2 and (x3 - x1)**2 + (y2 - y1)<= r**2 and (x2 -x1)**2 + (y3 - y1)**2 <= r**2 and (x3 - x1)**2 + (y3 - y1)**2 <= r**2:
+    lu = (x2-x1)**2 + (y3-y1)**2 < r**2
+    ru = (x3-x1)**2 + (y3-y1)**2 < r**2
+    ld = (x2-x1)**2 + (y2-y1)**2 < r**2
+    rd = (x3-x1)**2 + (y2-y1)**2 < r**2
+
+    if lu and ru and ld and rd:
         print('NO')
     else:
         print('YES')
